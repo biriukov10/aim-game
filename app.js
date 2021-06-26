@@ -17,7 +17,7 @@ const setTime = val => {
 
 const getRandomNumber = (min, max) => Math.round(Math.random() * (max - min) + min);
 
-const createRandomCircle = _ => {
+const createRandomCircle = (hashStart, hashEnd) => {
   const circle = document.createElement('div');
   const size = getRandomNumber(10, 60);
   const { width, height } = board.getBoundingClientRect();
@@ -27,7 +27,8 @@ const createRandomCircle = _ => {
   circle.style.width = `${size}px`
   circle.style.height = `${size}px`
   circle.style.top = `${y}px`;
-  circle.style.left = `${x}px`; 
+  circle.style.left = `${x}px`;
+  circle.style.background = `#${getRandomNumber(0, 999999)}`;
   board.append(circle);
 }
 
